@@ -1,570 +1,236 @@
-<html xmlns:v="urn:schemas-microsoft-com:vml"
-xmlns:o="urn:schemas-microsoft-com:office:office"
-xmlns:w="urn:schemas-microsoft-com:office:word"
-xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
-xmlns="http://www.w3.org/TR/REC-html40">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>VKPhotosGeoLocation</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
 
-<head>
-<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
-<meta name=ProgId content=Word.Document>
-<meta name=Generator content="Microsoft Word 14">
-<meta name=Originator content="Microsoft Word 14">
-<link rel=File-List href="map.files/filelist.xml">
-<!--[if gte mso 9]><xml>
- <o:DocumentProperties>
-  <o:Author>USER</o:Author>
-  <o:Template>Normal</o:Template>
-  <o:LastAuthor>USER</o:LastAuthor>
-  <o:Revision>8</o:Revision>
-  <o:TotalTime>54</o:TotalTime>
-  <o:Created>2018-04-12T21:55:00Z</o:Created>
-  <o:LastSaved>2018-04-12T22:44:00Z</o:LastSaved>
-  <o:Pages>1</o:Pages>
-  <o:Words>135</o:Words>
-  <o:Characters>770</o:Characters>
-  <o:Company>SPecialiST RePack</o:Company>
-  <o:Lines>6</o:Lines>
-  <o:Paragraphs>1</o:Paragraphs>
-  <o:CharactersWithSpaces>904</o:CharactersWithSpaces>
-  <o:Version>14.00</o:Version>
- </o:DocumentProperties>
- <o:OfficeDocumentSettings>
-  <o:AllowPNG/>
- </o:OfficeDocumentSettings>
-</xml><![endif]-->
-<link rel=themeData href="map.files/themedata.thmx">
-<link rel=colorSchemeMapping href="map.files/colorschememapping.xml">
-<!--[if gte mso 9]><xml>
- <w:WordDocument>
-  <w:SpellingState>Clean</w:SpellingState>
-  <w:GrammarState>Clean</w:GrammarState>
-  <w:TrackMoves>false</w:TrackMoves>
-  <w:TrackFormatting/>
-  <w:PunctuationKerning/>
-  <w:ValidateAgainstSchemas/>
-  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
-  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
-  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
-  <w:DoNotPromoteQF/>
-  <w:LidThemeOther>RU</w:LidThemeOther>
-  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
-  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
-  <w:Compatibility>
-   <w:BreakWrappedTables/>
-   <w:SnapToGridInCell/>
-   <w:WrapTextWithPunct/>
-   <w:UseAsianBreakRules/>
-   <w:DontGrowAutofit/>
-   <w:SplitPgBreakAndParaMark/>
-   <w:EnableOpenTypeKerning/>
-   <w:DontFlipMirrorIndents/>
-   <w:OverrideTableStyleHps/>
-  </w:Compatibility>
-  <m:mathPr>
-   <m:mathFont m:val="Cambria Math"/>
-   <m:brkBin m:val="before"/>
-   <m:brkBinSub m:val="&#45;-"/>
-   <m:smallFrac m:val="off"/>
-   <m:dispDef/>
-   <m:lMargin m:val="0"/>
-   <m:rMargin m:val="0"/>
-   <m:defJc m:val="centerGroup"/>
-   <m:wrapIndent m:val="1440"/>
-   <m:intLim m:val="subSup"/>
-   <m:naryLim m:val="undOvr"/>
-  </m:mathPr></w:WordDocument>
-</xml><![endif]--><!--[if gte mso 9]><xml>
- <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
-  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
-  LatentStyleCount="267">
-  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
-  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
-  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
-  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
-  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
-  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
-  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
-  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
-  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
-  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
-  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
-  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
-  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
-  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
-  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
-  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
-  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
-  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
-  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
-  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
-  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
-  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
-  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
-  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
-  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
-  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Table Grid"/>
-  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
-  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
-  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Shading"/>
-  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light List"/>
-  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Grid"/>
-  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 1"/>
-  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 2"/>
-  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 1"/>
-  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 2"/>
-  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 1"/>
-  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 2"/>
-  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 3"/>
-  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Dark List"/>
-  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Shading"/>
-  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful List"/>
-  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Grid"/>
-  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
-  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light List Accent 1"/>
-  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
-  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
-  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
-  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
-  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
-  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
-  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
-  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
-  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
-  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
-  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
-  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
-  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
-  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
-  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
-  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
-  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
-  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light List Accent 2"/>
-  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
-  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
-  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
-  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
-  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
-  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
-  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
-  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
-  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
-  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
-  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
-  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
-  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
-  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light List Accent 3"/>
-  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
-  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
-  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
-  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
-  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
-  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
-  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
-  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
-  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
-  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
-  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
-  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
-  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
-  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light List Accent 4"/>
-  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
-  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
-  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
-  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
-  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
-  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
-  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
-  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
-  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
-  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
-  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
-  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
-  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
-  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light List Accent 5"/>
-  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
-  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
-  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
-  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
-  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
-  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
-  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
-  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
-  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
-  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
-  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
-  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
-  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
-  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light List Accent 6"/>
-  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
-  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
-  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
-  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
-  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
-  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
-  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
-  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
-  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
-  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
-  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
-  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
-   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
-  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
-  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
-  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
-  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
-  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
-   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
-  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
-  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
- </w:LatentStyles>
-</xml><![endif]-->
-<style>
-<!--
- /* Font Definitions */
- @font-face
-	{font-family:Calibri;
-	panose-1:2 15 5 2 2 2 4 3 2 4;
-	mso-font-charset:204;
-	mso-generic-font-family:swiss;
-	mso-font-pitch:variable;
-	mso-font-signature:-520092929 1073786111 9 0 415 0;}
- /* Style Definitions */
- p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{mso-style-unhide:no;
-	mso-style-qformat:yes;
-	mso-style-parent:"";
-	margin-top:0cm;
-	margin-right:0cm;
-	margin-bottom:10.0pt;
-	margin-left:0cm;
-	line-height:115%;
-	mso-pagination:widow-orphan;
-	font-size:11.0pt;
-	font-family:"Calibri","sans-serif";
-	mso-ascii-font-family:Calibri;
-	mso-ascii-theme-font:minor-latin;
-	mso-fareast-font-family:Calibri;
-	mso-fareast-theme-font:minor-latin;
-	mso-hansi-font-family:Calibri;
-	mso-hansi-theme-font:minor-latin;
-	mso-bidi-font-family:"Times New Roman";
-	mso-bidi-theme-font:minor-bidi;
-	mso-fareast-language:EN-US;}
-span.SpellE
-	{mso-style-name:"";
-	mso-spl-e:yes;}
-span.GramE
-	{mso-style-name:"";
-	mso-gram-e:yes;}
-.MsoChpDefault
-	{mso-style-type:export-only;
-	mso-default-props:yes;
-	mso-ascii-font-family:Calibri;
-	mso-ascii-theme-font:minor-latin;
-	mso-fareast-font-family:Calibri;
-	mso-fareast-theme-font:minor-latin;
-	mso-hansi-font-family:Calibri;
-	mso-hansi-theme-font:minor-latin;
-	mso-bidi-font-family:"Times New Roman";
-	mso-bidi-theme-font:minor-bidi;
-	mso-fareast-language:EN-US;}
-.MsoPapDefault
-	{mso-style-type:export-only;
-	margin-bottom:10.0pt;
-	line-height:115%;}
-@page WordSection1
-	{size:595.3pt 841.9pt;
-	margin:2.0cm 42.5pt 2.0cm 3.0cm;
-	mso-header-margin:35.4pt;
-	mso-footer-margin:35.4pt;
-	mso-paper-source:0;}
-div.WordSection1
-	{page:WordSection1;}
--->
-</style>
-<!--[if gte mso 10]>
-<style>
- /* Style Definitions */
- table.MsoNormalTable
-	{mso-style-name:"Œ·˚˜Ì‡ˇ Ú‡·ÎËˆ‡";
-	mso-tstyle-rowband-size:0;
-	mso-tstyle-colband-size:0;
-	mso-style-noshow:yes;
-	mso-style-priority:99;
-	mso-style-parent:"";
-	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
-	mso-para-margin-top:0cm;
-	mso-para-margin-right:0cm;
-	mso-para-margin-bottom:10.0pt;
-	mso-para-margin-left:0cm;
-	line-height:115%;
-	mso-pagination:widow-orphan;
-	font-size:11.0pt;
-	font-family:"Calibri","sans-serif";
-	mso-ascii-font-family:Calibri;
-	mso-ascii-theme-font:minor-latin;
-	mso-hansi-font-family:Calibri;
-	mso-hansi-theme-font:minor-latin;
-	mso-bidi-font-family:"Times New Roman";
-	mso-bidi-theme-font:minor-bidi;
-	mso-fareast-language:EN-US;}
-</style>
-<![endif]--><!--[if gte mso 9]><xml>
- <o:shapedefaults v:ext="edit" spidmax="1026"/>
-</xml><![endif]--><!--[if gte mso 9]><xml>
- <o:shapelayout v:ext="edit">
-  <o:idmap v:ext="edit" data="1"/>
- </o:shapelayout></xml><![endif]-->
-</head>
+function initMap() {
+  /* –ö–æ–æ—Ä–¥–∏–Ω–∞—Ç—ã –†–æ—Å—Ç–æ–≤–∞-–Ω–∞-–î–æ–Ω—É */
+  var myLatLng = {lat: 47.14, lng: 39.42};
 
-<body lang=RU style='tab-interval:35.4pt'>
+  /* –°–æ–∑–¥–∞–Ω–∏–µ –∫–∞—Ä—Ç—ã –æ—Ç—Ü–µ–Ω—Ç—Ä–æ–≤–∞–Ω–Ω–æ–π –Ω–∞ –∑–∞–¥–∞–Ω–Ω—ã—Ö –∫–æ–æ—Ä–¥–∏–Ω–∞—Ç–∞—Ö */
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4,
+    center: myLatLng
+  });
 
-<div class=WordSection1>
+  var marker = new google.maps.Marker({ position: {lat: 54.727444, lng 55.943135}, map: map});
+new google.maps.Marker({ position: {lat: 54.4833, lng 53.45839}, map: map});
+new google.maps.Marker({ position: {lat: 54.727452, lng 55.943386}, map: map});
+new google.maps.Marker({ position: {lat: 54.727547, lng 55.94317}, map: map});
+new google.maps.Marker({ position: {lat: 54.727533, lng 55.943134}, map: map});
+new google.maps.Marker({ position: {lat: 54.727533, lng 55.943134}, map: map});
+new google.maps.Marker({ position: {lat: 54.727513, lng 55.943158}, map: map});
+new google.maps.Marker({ position: {lat: 54.727478, lng 55.943147}, map: map});
+new google.maps.Marker({ position: {lat: 54.727513, lng 55.943158}, map: map});
+new google.maps.Marker({ position: {lat: 54.727603, lng 55.943312}, map: map});
+new google.maps.Marker({ position: {lat: 54.727541, lng 55.94323}, map: map});
+new google.maps.Marker({ position: {lat: 54.727422, lng 55.942695}, map: map});
+new google.maps.Marker({ position: {lat: 54.727513, lng 55.943158}, map: map});
+new google.maps.Marker({ position: {lat: 54.727526, lng 55.942884}, map: map});
+new google.maps.Marker({ position: {lat: 54.727513, lng 55.943158}, map: map});
+new google.maps.Marker({ position: {lat: 54.727492, lng 55.943182}, map: map});
+new google.maps.Marker({ position: {lat: 54.727567, lng 55.942991}, map: map});
+new google.maps.Marker({ position: {lat: 54.727547, lng 55.94317}, map: map});
+new google.maps.Marker({ position: {lat: 54.727527, lng 55.943194}, map: map});
+new google.maps.Marker({ position: {lat: 54.727513, lng 55.943158}, map: map});
+new google.maps.Marker({ position: {lat: 54.727492, lng 55.943182}, map: map});
+new google.maps.Marker({ position: {lat: 54.727513, lng 55.943158}, map: map});
+new google.maps.Marker({ position: {lat: 54.727541, lng 55.94323}, map: map});
+new google.maps.Marker({ position: {lat: 54.727527, lng 55.943194}, map: map});
+new google.maps.Marker({ position: {lat: 54.729509, lng 55.943208}, map: map});
+new google.maps.Marker({ position: {lat: 54.727451, lng 55.943231}, map: map});
+new google.maps.Marker({ position: {lat: 54.727527, lng 55.943194}, map: map});
+new google.maps.Marker({ position: {lat: 54.727424, lng 55.943314}, map: map});
+new google.maps.Marker({ position: {lat: 54.727513, lng 55.943158}, map: map});
+new google.maps.Marker({ position: {lat: 54.727492, lng 55.943182}, map: map});
+new google.maps.Marker({ position: {lat: 54.727513, lng 55.943158}, map: map});
+new google.maps.Marker({ position: {lat: 54.727533, lng 55.943134}, map: map});
+new google.maps.Marker({ position: {lat: 54.727802, lng 55.943286}, map: map});
+new google.maps.Marker({ position: {lat: 54.727382, lng 55.943053}, map: map});
+new google.maps.Marker({ position: {lat: 54.727547, lng 55.94317}, map: map});
+new google.maps.Marker({ position: {lat: 54.727513, lng 55.943158}, map: map});
+new google.maps.Marker({ position: {lat: 54.727492, lng 55.943182}, map: map});
+new google.maps.Marker({ position: {lat: 54.727478, lng 55.943147}, map: map});
+new google.maps.Marker({ position: {lat: 54.727527, lng 55.943194}, map: map});
+new google.maps.Marker({ position: {lat: 54.727485, lng 55.943087}, map: map});
+new google.maps.Marker({ position: {lat: 54.727794, lng 55.940962}, map: map});
+new google.maps.Marker({ position: {lat: 54.727499, lng 55.943123}, map: map});
+new google.maps.Marker({ position: {lat: 54.727533, lng 55.943134}, map: map});
+new google.maps.Marker({ position: {lat: 54.727499, lng 55.943123}, map: map});
+new google.maps.Marker({ position: {lat: 54.727513, lng 55.943158}, map: map});
+new google.maps.Marker({ position: {lat: 54.727547, lng 55.94317}, map: map});
+new google.maps.Marker({ position: {lat: 54.72752, lng 55.943099}, map: map});
+new google.maps.Marker({ position: {lat: 54.725831, lng 55.946216}, map: map});
+new google.maps.Marker({ position: {lat: 54.727437, lng 55.943195}, map: map});
+new google.maps.Marker({ position: {lat: 54.727444, lng 55.943135}, map: map});
+new google.maps.Marker({ position: {lat: 54.727486, lng 55.943242}, map: map});
+new google.maps.Marker({ position: {lat: 54.727472, lng 55.943207}, map: map});
+new google.maps.Marker({ position: {lat: 54.727278, lng 55.943018}, map: map});
+new google.maps.Marker({ position: {lat: 54.727499, lng 55.943123}, map: map});
+new google.maps.Marker({ position: {lat: 54.700117, lng 56.006168}, map: map});
+new google.maps.Marker({ position: {lat: 54.727547, lng 55.94317}, map: map});
+new google.maps.Marker({ position: {lat: 54.727589, lng 55.943277}, map: map});
+new google.maps.Marker({ position: {lat: 54.727547, lng 55.94317}, map: map});
+new google.maps.Marker({ position: {lat: 54.727527, lng 55.943194}, map: map});
+new google.maps.Marker({ position: {lat: 54.727547, lng 55.94317}, map: map});
+new google.maps.Marker({ position: {lat: 54.727513, lng 55.943158}, map: map});
+new google.maps.Marker({ position: {lat: 54.727492, lng 55.943182}, map: map});
+new google.maps.Marker({ position: {lat: 54.727541, lng 55.94323}, map: map});
+new google.maps.Marker({ position: {lat: 54.727541, lng 55.94323}, map: map});
+new google.maps.Marker({ position: {lat: 54.727396, lng 55.943088}, map: map});
+new google.maps.Marker({ position: {lat: 54.727478, lng 55.943147}, map: map});
+new google.maps.Marker({ position: {lat: 54.727451, lng 55.943076}, map: map});
+new google.maps.Marker({ position: {lat: 54.727492, lng 55.943182}, map: map});
+new google.maps.Marker({ position: {lat: 54.727513, lng 55.943158}, map: map});
+new google.maps.Marker({ position: {lat: 54.725609, lng 55.940045}, map: map});
+new google.maps.Marker({ position: {lat: 54.727513, lng 55.943158}, map: map});
+new google.maps.Marker({ position: {lat: 54.727527, lng 55.943194}, map: map});
+new google.maps.Marker({ position: {lat: 54.727093, lng 55.94308}, map: map});
+new google.maps.Marker({ position: {lat: 54.727527, lng 55.943194}, map: map});
+new google.maps.Marker({ position: {lat: 54.727527, lng 55.943194}, map: map});
+new google.maps.Marker({ position: {lat: 54.726425, lng 55.94298}, map: map});
+new google.maps.Marker({ position: {lat: 54.727527, lng 55.943194}, map: map});
+new google.maps.Marker({ position: {lat: 54.727499, lng 55.943123}, map: map});
+new google.maps.Marker({ position: {lat: 54.727547, lng 55.94317}, map: map});
+new google.maps.Marker({ position: {lat: 54.727513, lng 55.943158}, map: map});
+new google.maps.Marker({ position: {lat: 54.727547, lng 55.94317}, map: map});
+new google.maps.Marker({ position: {lat: 54.727547, lng 55.94317}, map: map});
+new google.maps.Marker({ position: {lat: 54.727547, lng 55.94317}, map: map});
+new google.maps.Marker({ position: {lat: 54.727382, lng 55.943053}, map: map});
+new google.maps.Marker({ position: {lat: 54.727492, lng 55.943182}, map: map});
+new google.maps.Marker({ position: {lat: 54.72929, lng 55.941804}, map: map});
+new google.maps.Marker({ position: {lat: 54.727533, lng 55.943134}, map: map});
+new google.maps.Marker({ position: {lat: 54.727547, lng 55.94317}, map: map});
+new google.maps.Marker({ position: {lat: 54.727499, lng 55.943123}, map: map});
+new google.maps.Marker({ position: {lat: 54.727555, lng 55.943265}, map: map});
+new google.maps.Marker({ position: {lat: 54.727547, lng 55.94317}, map: map});
+new google.maps.Marker({ position: {lat: 54.727513, lng 55.943158}, map: map});
+new google.maps.Marker({ position: {lat: 54.727299, lng 55.942994}, map: map});
+new google.maps.Marker({ position: {lat: 54.727499, lng 55.943123}, map: map});
+new google.maps.Marker({ position: {lat: 54.727555, lng 55.943265}, map: map});
+new google.maps.Marker({ position: {lat: 54.727533, lng 55.943134}, map: map});
+new google.maps.Marker({ position: {lat: 54.727561, lng 55.943206}, map: map});
+new google.maps.Marker({ position: {lat: 54.727492, lng 55.943182}, map: map});
+new google.maps.Marker({ position: {lat: 54.727527, lng 55.943194}, map: map});
+new google.maps.Marker({ position: {lat: 54.727506, lng 55.943218}, map: map});
+new google.maps.Marker({ position: {lat: 54.727492, lng 55.943182}, map: map});
+new google.maps.Marker({ position: {lat: 30.258164, lng -97.712506}, map: map});
+new google.maps.Marker({ position: {lat: 33.866612, lng -118.265892}, map: map});
+new google.maps.Marker({ position: {lat: 55.685296, lng 37.6724}, map: map});
+new google.maps.Marker({ position: {lat: 54.77311, lng 56.021858}, map: map});
+new google.maps.Marker({ position: {lat: 54.768312, lng 56.010135}, map: map});
+new google.maps.Marker({ position: {lat: 45.011564, lng 38.991313}, map: map});
+new google.maps.Marker({ position: {lat: 47.243048, lng 39.670184}, map: map});
+new google.maps.Marker({ position: {lat: 47.24296, lng 39.670122}, map: map});
+new google.maps.Marker({ position: {lat: 47.305365, lng 39.74796}, map: map});
+new google.maps.Marker({ position: {lat: 47.305626, lng 39.747825}, map: map});
+new google.maps.Marker({ position: {lat: 47.211692, lng 39.757982}, map: map});
+new google.maps.Marker({ position: {lat: 43.866655, lng 39.386637}, map: map});
+new google.maps.Marker({ position: {lat: 44.981009, lng 41.926567}, map: map});
+new google.maps.Marker({ position: {lat: 45.048491, lng 41.974885}, map: map});
+new google.maps.Marker({ position: {lat: 45.045672, lng 41.969298}, map: map});
+new google.maps.Marker({ position: {lat: 55.754667, lng 37.619556}, map: map});
+new google.maps.Marker({ position: {lat: 55.421654, lng 37.761434}, map: map});
+new google.maps.Marker({ position: {lat: 47.282282, lng 39.72085}, map: map});
+new google.maps.Marker({ position: {lat: 47.294291, lng 39.736881}, map: map});
+new google.maps.Marker({ position: {lat: 47.299013, lng 39.688245}, map: map});
+new google.maps.Marker({ position: {lat: 47.282279, lng 39.720801}, map: map});
+new google.maps.Marker({ position: {lat: 47.254732, lng 39.803221}, map: map});
+new google.maps.Marker({ position: {lat: 47.254799, lng 39.803212}, map: map});
+new google.maps.Marker({ position: {lat: 36.819496, lng 31.30308}, map: map});
+new google.maps.Marker({ position: {lat: 36.819647, lng 31.301981}, map: map});
+new google.maps.Marker({ position: {lat: 36.819892, lng 31.300218}, map: map});
+new google.maps.Marker({ position: {lat: 36.81991, lng 31.300967}, map: map});
+new google.maps.Marker({ position: {lat: 51.628249, lng 39.097583}, map: map});
+new google.maps.Marker({ position: {lat: 47.240848, lng 39.675022}, map: map});
+new google.maps.Marker({ position: {lat: 47.294378, lng 39.73667}, map: map});
+new google.maps.Marker({ position: {lat: 45.0456, lng 41.971338}, map: map});
+new google.maps.Marker({ position: {lat: 45.360301, lng 36.637203}, map: map});
+new google.maps.Marker({ position: {lat: 45.356757, lng 36.645601}, map: map});
+new google.maps.Marker({ position: {lat: 45.36206, lng 36.632387}, map: map});
+new google.maps.Marker({ position: {lat: 44.641384, lng 34.399696}, map: map});
+new google.maps.Marker({ position: {lat: 44.612164, lng 33.491893}, map: map});
+new google.maps.Marker({ position: {lat: 43.670435, lng 40.2489}, map: map});
+new google.maps.Marker({ position: {lat: 43.670704, lng 40.249005}, map: map});
+new google.maps.Marker({ position: {lat: 43.670408, lng 40.248993}, map: map});
+new google.maps.Marker({ position: {lat: 43.000013, lng 38.999992}, map: map});
+new google.maps.Marker({ position: {lat: 47.230831, lng 39.728346}, map: map});
+new google.maps.Marker({ position: {lat: 43.944011, lng 44.897441}, map: map});
+new google.maps.Marker({ position: {lat: 44.579722, lng 38.030897}, map: map});
+new google.maps.Marker({ position: {lat: 44.580502, lng 38.027113}, map: map});
+new google.maps.Marker({ position: {lat: 47.218186, lng 38.898425}, map: map});
+new google.maps.Marker({ position: {lat: 59.939375, lng 30.313762}, map: map});
+new google.maps.Marker({ position: {lat: 59.93965, lng 30.314437}, map: map});
+new google.maps.Marker({ position: {lat: 59.93512, lng 30.325767}, map: map});
+new google.maps.Marker({ position: {lat: 59.943989, lng 30.304355}, map: map});
+new google.maps.Marker({ position: {lat: 59.988206, lng 29.767116}, map: map});
+new google.maps.Marker({ position: {lat: 59.991109, lng 29.775956}, map: map});
+new google.maps.Marker({ position: {lat: 47.297844, lng 39.717564}, map: map});
+new google.maps.Marker({ position: {lat: 47.258428, lng 39.72147}, map: map});
+new google.maps.Marker({ position: {lat: 47.324732, lng 39.746252}, map: map});
+new google.maps.Marker({ position: {lat: 47.324735, lng 39.746301}, map: map});
+new google.maps.Marker({ position: {lat: 47.324699, lng 39.746256}, map: map});
+new google.maps.Marker({ position: {lat: 47.266212, lng 39.573681}, map: map});
+new google.maps.Marker({ position: {lat: 47.270323, lng 39.560977}, map: map});
+new google.maps.Marker({ position: {lat: 47.270732, lng 39.558712}, map: map});
+new google.maps.Marker({ position: {lat: 47.385619, lng 39.673637}, map: map});
+new google.maps.Marker({ position: {lat: 47.276952, lng 39.715822}, map: map});
+new google.maps.Marker({ position: {lat: 47.277043, lng 39.715661}, map: map});
+new google.maps.Marker({ position: {lat: 47.276888, lng 39.715608}, map: map});
+new google.maps.Marker({ position: {lat: 47.277028, lng 39.715688}, map: map});
+new google.maps.Marker({ position: {lat: 47.276983, lng 39.716041}, map: map});
+new google.maps.Marker({ position: {lat: 47.248753, lng 39.667542}, map: map});
+new google.maps.Marker({ position: {lat: 47.248828, lng 39.667407}, map: map});
+new google.maps.Marker({ position: {lat: 47.248804, lng 39.667559}, map: map});
+new google.maps.Marker({ position: {lat: 44.241966, lng 38.835073}, map: map});
+new google.maps.Marker({ position: {lat: 44.242238, lng 38.834755}, map: map});
+new google.maps.Marker({ position: {lat: 44.239877, lng 38.841327}, map: map});
+new google.maps.Marker({ position: {lat: 44.241301, lng 38.83416}, map: map});
+new google.maps.Marker({ position: {lat: 44.242096, lng 38.835053}, map: map});
+new google.maps.Marker({ position: {lat: 55.822317, lng 37.645457}, map: map});
+new google.maps.Marker({ position: {lat: 55.830814, lng 37.630354}, map: map});
+new google.maps.Marker({ position: {lat: 55.752006, lng 37.612834}, map: map});
+new google.maps.Marker({ position: {lat: 55.750135, lng 37.609377}, map: map});
+new google.maps.Marker({ position: {lat: 47.297211, lng 39.707476}, map: map});
+new google.maps.Marker({ position: {lat: 47.289293, lng 39.720491}, map: map});
+new google.maps.Marker({ position: {lat: 47.288504, lng 39.720251}, map: map});
+new google.maps.Marker({ position: {lat: 47.289338, lng 39.719864}, map: map});
+new google.maps.Marker({ position: {lat: 47.296809, lng 39.706166}, map: map});
+new google.maps.Marker({ position: {lat: 43.67395, lng 39.602692}, map: map});
+new google.maps.Marker({ position: {lat: 43.674189, lng 39.606199}, map: map});
+new google.maps.Marker({ position: {lat: 43.674556, lng 39.606038}, map: map});
+new google.maps.Marker({ position: {lat: 47.298992, lng 39.702617}, map: map});
+new google.maps.Marker({ position: {lat: 47.298904, lng 39.702554}, map: map});
+new google.maps.Marker({ position: {lat: 47.298938, lng 39.70255}, map: map});
+new google.maps.Marker({ position: {lat: 47.336427, lng 39.739176}, map: map});
+new google.maps.Marker({ position: {lat: 47.336357, lng 39.739135}, map: map});
+new google.maps.Marker({ position: {lat: 47.336445, lng 39.739198}, map: map});
+new google.maps.Marker({ position: {lat: 47.336442, lng 39.739149}, map: map});
+new google.maps.Marker({ position: {lat: 47.229115, lng 39.742847}, map: map});
+new google.maps.Marker({ position: {lat: 44.657501, lng 37.870921}, map: map});
+new google.maps.Marker({ position: {lat: 44.639974, lng 37.920936}, map: map});
+new google.maps.Marker({ position: {lat: 47.251372, lng 39.788059}, map: map});
 
-<p class=MsoNormal><span class=GramE><span lang=EN-US style='mso-ansi-language:
-EN-US'>&lt;!DOCTYPE</span></span><span lang=EN-US style='mso-ansi-language:
-EN-US'> html&gt;<o:p></o:p></span></p>
+}
 
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>&lt;<span
-class=GramE>html</span>&gt;<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>† </span>&lt;<span class=GramE>head</span>&gt;<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>††† </span>&lt;<span class=GramE>meta</span>
-name=&quot;viewport&quot; content=&quot;initial-scale=1.0,
-user-scalable=no&quot;&gt;<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>††† </span>&lt;<span class=GramE>meta</span>
-charset=&quot;utf-8&quot;&gt;<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>††† </span>&lt;<span class=GramE>title&gt;</span><span
-class=SpellE>VKPhotosGeoLocation</span>&lt;/title&gt;<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>††† </span>&lt;<span class=GramE>style</span>&gt;<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>††††† </span><span class=GramE>html</span>, body {<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>††††††† </span><span class=GramE>height</span>: 100%;<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>††††††† </span><span class=GramE>margin</span>: 0;<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>††††††† </span><span class=GramE>padding</span>: 0;<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>††††† </span>}<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>††††† </span>#map {<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>††††††† </span><span class=GramE>height</span>: 100%;<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>††††† </span>}<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>††† </span>&lt;/style&gt;<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>† </span>&lt;/head&gt;<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>† </span>&lt;<span class=GramE>body</span>&gt;<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>††† </span>&lt;div id=&quot;map&quot;&gt;&lt;/div&gt;<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>††† </span>&lt;<span class=GramE>script</span>&gt;<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
-
-<p class=MsoNormal><span class=GramE><span lang=EN-US style='mso-ansi-language:
-EN-US'>function</span></span><span lang=EN-US style='mso-ansi-language:EN-US'> <span
-class=SpellE>initMap</span>() {<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>† </span>/* <span class=SpellE> ÓÓ‰ËÌ‡Ú˚</span> <span
-class=SpellE>–ÓÒÚÓ‚‡-Ì‡-ƒÓÌÛ</span> */<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>† </span><span class=SpellE><span class=GramE>var</span></span></span><span
-lang=EN-US> </span><span class=SpellE><span lang=EN-US style='mso-ansi-language:
-EN-US'>myLatLng</span></span> = {<span class=SpellE><span lang=EN-US
-style='mso-ansi-language:EN-US'>lat</span></span>: 47.14, <span class=SpellE><span
-lang=EN-US style='mso-ansi-language:EN-US'>lng</span></span>: 39.42};<o:p></o:p></p>
-
-<p class=MsoNormal><o:p>&nbsp;</o:p></p>
-
-<p class=MsoNormal><span style='mso-spacerun:yes'>† </span>/* —ÓÁ‰‡ÌËÂ Í‡Ú˚ <span
-class=SpellE>ÓÚˆÂÌÚÓ‚‡ÌÌÓÈ</span> Ì‡ Á‡‰‡ÌÌ˚ı ÍÓÓ‰ËÌ‡Ú‡ı */<o:p></o:p></p>
-
-<p class=MsoNormal><span style='mso-spacerun:yes'>† </span><span class=SpellE><span
-class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>var</span></span></span><span
-lang=EN-US style='mso-ansi-language:EN-US'> map = new <span class=SpellE>google.maps.Map</span>(<span
-class=SpellE>document.getElementById</span>('map'), {<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>††† </span><span class=GramE>zoom</span>: 4,<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>††† </span><span class=GramE>center</span>: <span
-class=SpellE>myLatLng</span><o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>† </span>});<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>† </span>/* PLACEHOLDER */<span
-style='mso-spacerun:yes'>† </span><o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>}<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>††† </span>&lt;/script&gt;<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>††† </span><span class=GramE>&lt;!--</span> <span
-class=SpellE>«‰ÂÒ¸</span> <span class=SpellE>‰Ó·‡‚ÎˇÂÏ</span> API <span
-class=SpellE>ÍÎ˛˜</span> --&gt;<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>††† </span>&lt;<span class=GramE>script</span> <span
-class=SpellE>async</span> defer
-src=&quot;https://maps.googleapis.com/maps/api/js?key=AIzaSyDhYgKvkA76qy90g4GIAWz22l7xBF5PZG0&amp;signed_in=true&amp;callback=initMap&quot;&gt;&lt;/script&gt;<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
-style='mso-spacerun:yes'>† </span>&lt;/body&gt;<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>&lt;/html&gt;</span></p>
-
-</div>
-
-</body>
-
+    </script>
+    <!-- –ó–¥–µ—Å—å –¥–æ–±–∞–≤–ª—è–µ–º API –∫–ª—é—á -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgWGTKOpGVeNbCKIzvMQVNr96kT15L_qs&signed_in=true&callback=initMap"></script>
+  </body>
 </html>
